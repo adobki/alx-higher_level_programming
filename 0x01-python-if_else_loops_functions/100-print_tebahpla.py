@@ -8,7 +8,7 @@ def print_tebahpla():
     for letter in alphabets:
         if letter % 2:
             letter -= 32
-        print(chr(letter), end="")
+        print("{}".format(chr(letter)), end="")
 
 
 print_tebahpla()
