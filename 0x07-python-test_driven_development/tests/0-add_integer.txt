@@ -1,0 +1,77 @@
+========================================================
+How to use ``add_integer`` from ``0-add_integer`` module
+========================================================
+
+As defined in the module, the  function ``add_integer(a, b=98)`` adds two
+integers and returns the result.
+
+First import ``add_integer`` from the ``0-add_integer`` module, then use it:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> print(add_integer(1, 2))
+    3
+
+============
+Normal Usage
+============
+
+Inputs should be ints (signed or unsigned):
+
+    >>> print(add_integer(100, -2))
+    98
+
+or floats (also signed/unsigned), but they are casted to ints before adding:
+
+    >>> print(add_integer(-100.3, 2.7))
+    -98
+
+Passing single parameter sets second to default value (b = 98):
+
+    >>> print(add_integer(2))
+    100
+
+================================================
+ERRORS: Caught and raised errors from user input
+================================================
+
+Passing no parameters raises a TypeError:
+
+    >>> print(add_integer())
+    Traceback (most recent call last):
+      . . .
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Passing non-int value for b raises a TypeError:
+
+    >>> print(add_integer(4, 'School'))
+    b must be an integer
+
+Passing non-int value for a or both a and b raises a TypeError for a:
+
+    >>> print(add_integer('School'))
+    a must be an integer
+
+    >>> print(add_integer(['Best', 'School'], 'ALX'))
+    a must be an integer
+
+    >>> print(add_integer(None))
+    a must be an integer
+
+    >>> print(add_integer(None, None))
+    a must be an integer
+
+Passing float NaN as a, b, or both a and b raises an ValueError:
+
+    >>> add_integer(float('nan'))
+    ValueError('cannot convert float NaN to integer')
+
+    >>> add_integer(404, float('nan'))
+    ValueError('cannot convert float NaN to integer')
+
+Passing float infinity as a, b, or both a and b raises an OverflowError:
+
+    >>> add_integer(float('inf'))
+    OverflowError('cannot convert float infinity to integer')
+
+    >>> add_integer(float('inf'), float('inf'))
+    OverflowError('cannot convert float infinity to integer')
