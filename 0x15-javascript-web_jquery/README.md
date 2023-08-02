@@ -59,3 +59,15 @@ This folder contains the actual results of completing the tasks in the project _
 > ___100-script.js___, ___tests/100-main.html___
 >
 > Changes the font color of the header to red after browser has loaded the webpage.
+
+> ___101-script.js___, ___tests/101-main.html___
+>
+> Adds an element to a list when user clicks a DIV.
+
+> ___102-script.js___, ___tests/102-main.html___
+>
+> Displays the hello message gotten from an API in chosen language after user clicks translate button.
+
+> ___103-script.js___, ___tests/103-main.html___
+>
+> Displays the hello message gotten from an API in chosen language after user clicks translate button or presses Enter in the language textbox.
